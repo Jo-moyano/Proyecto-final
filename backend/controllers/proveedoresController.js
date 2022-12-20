@@ -80,7 +80,7 @@ exports.actualizarProveedor   = async (req,res) => {
 
     try {
 
-        const{nombres,apellidos,correo,telefono,cuidad} = req.body;
+        const{nombre,apellido,correo,telefono,cuidad} = req.body;
 
         let  proveedor = await Proveedores.findById(req.params.id);
 
@@ -89,8 +89,8 @@ exports.actualizarProveedor   = async (req,res) => {
             res.status(404).json({ msg: " no existe el proveedor "});
             return
         }
-        proveedor.nombres=nombres;
-        proveedor.apellidos=apellidos;
+        proveedor.nombre=nombre;
+        proveedor.apellido=apellido;
         proveedor.correo=correo;
         proveedor.telefono=telefono;
         proveedor.cuidad=cuidad;

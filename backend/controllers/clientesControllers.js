@@ -80,7 +80,7 @@ exports.actualizarCliente   = async (req,res) => {
 
     try {
 
-        const{nombres,apellidos,telefono,ciudad,correo} = req.body;
+        const{nombre,apellido,telefono,ciudad,correo} = req.body;
 
         let  cliente = await Clientes.findById(req.params.id);
 
@@ -89,8 +89,8 @@ exports.actualizarCliente   = async (req,res) => {
             res.status(404).json({ msg: " no existe el cliente "});
             return
         }
-        cliente.nombres=nombres;
-        cliente.apellidos=apellidos;
+        cliente.nombre=nombre;
+        cliente.apellido=apellido;
         cliente.telefono=telefono;
         cliente.ciudad=ciudad;
         cliente.correo=correo;

@@ -16,11 +16,11 @@ res.json(materiales);
 exports.agregarmateriales = async (req,res) => {
 
     try {
-        let maeriales;
-        maeriales = new Materiales(req.body)
+        let materiales;
+        materiales = new Materiales(req.body)
 
-        await material.save();
-        res.send(material);
+        await materiales.save();
+        res.send(materiales);
         
     } catch (error) {
         console.log(error);
@@ -96,7 +96,7 @@ exports.actualizarmaterial   = async (req,res) => {
         material.estado=estado;
         
         material = await Materiales.findOneAndUpdate({_id: req.params.id}, material, {new: true});
-        rest.json(material);
+        res.json(material);
 
 
     } catch (error) {

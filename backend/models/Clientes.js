@@ -3,11 +3,11 @@ const mongoose = require ('mongoose');
 //Se coloca el esquema a la base de datos
 
 const clientesSchema = mongoose.Schema({
-    nombres:{
+    nombre:{
         type:String,
         require:true
     },
-    apellidos:{
+    apellido:{
         type:String,
         require:true
     },
